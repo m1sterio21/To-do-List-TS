@@ -1,0 +1,259 @@
+.todoForm {
+	display: flex;
+	margin-bottom: 1.5rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	background-color: var(--card);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todoForm:focus-within {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 2px rgba(67, 133, 190, 0.2);
+}
+
+.todoInput {
+	flex-grow: 1;
+	padding: 0.75rem 1rem;
+	border: 0;
+	background-color: transparent;
+	color: var(--foreground);
+	font-size: 1rem;
+	outline: none;
+}
+
+.todoInput::placeholder {
+	color: var(--muted-foreground);
+}
+
+.todoButton {
+	padding: 0.75rem 1rem;
+	color: var(--primary);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: background-color 0.2s ease;
+	border: none;
+	cursor: pointer;
+}
+
+.todoButton:hover {
+	background-color: var(--secondary);
+}
+
+.todoButton:disabled {
+	color: var(--muted-foreground);
+	cursor: not-allowed;
+}
+
+.todoButton:disabled:hover {
+	background-color: transparent;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+	.todoForm {
+		margin-bottom: 1.25rem;
+	}
+
+	.todoInput {
+		padding: 0.625rem 0.875rem;
+		font-size: 0.9375rem;
+	}
+
+	.todoButton {
+		padding: 0.625rem 0.875rem;
+		font-size: 0.9375rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.todoForm {
+		margin-bottom: 1rem;
+	}
+
+	.todoInput {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.875rem;
+	}
+
+	.todoButton {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.875rem;
+	}
+
+	.buttonText {
+		display: none;
+	}
+
+	.buttonIcon {
+		font-size: 1.125rem;
+	}
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 360px) {
+	.todoForm {
+		margin-bottom: 0.75rem;
+	}
+
+	.todoInput {
+		padding: 0.375rem 0.5rem;
+		font-size: 0.8125rem;
+	}
+
+	.todoButton {
+		padding: 0.375rem 0.5rem;
+		font-size: 0.8125rem;
+	}
+
+	.buttonIcon {
+		font-size: 1rem;
+	}
+}
+
+.buttonIcon {
+	font-size: 1.125rem;
+}
+
+.buttonText {
+	font-size: 0.875rem;
+}
+
+.inputContainer {
+	margin-bottom: 1.5rem;
+}
+
+.advancedToggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	width: 100%;
+	padding: 0.5rem;
+	margin-top: 0.75rem;
+	background-color: var(--secondary);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	color: var(--muted-foreground);
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.advancedToggle:hover {
+	background-color: var(--accent);
+	color: var(--accent-foreground);
+}
+
+.advancedOptions {
+	overflow: hidden;
+	background-color: var(--secondary);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	margin-top: 0.5rem;
+}
+
+.optionGroup {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.optionGroup:last-child {
+	border-bottom: none;
+}
+
+.optionLabel {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--foreground);
+	min-width: 100px;
+}
+
+.optionIcon {
+	font-size: 1rem;
+	color: var(--muted-foreground);
+}
+
+.optionSelect,
+.optionInput {
+	flex: 1;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background-color: var(--card);
+	color: var(--foreground);
+	font-size: 0.875rem;
+	transition: all 0.2s ease;
+}
+
+.optionSelect:focus,
+.optionInput:focus {
+	outline: none;
+	border-color: var(--primary);
+	box-shadow: 0 0 0 2px rgba(67, 133, 190, 0.2);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+	.inputContainer {
+		margin-bottom: 1.25rem;
+	}
+
+	.advancedToggle {
+		padding: 0.375rem;
+		font-size: 0.8125rem;
+	}
+
+	.optionGroup {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		padding: 0.625rem;
+	}
+
+	.optionLabel {
+		min-width: auto;
+		font-size: 0.8125rem;
+	}
+
+	.optionSelect,
+	.optionInput {
+		width: 100%;
+		padding: 0.375rem 0.625rem;
+		font-size: 0.8125rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.inputContainer {
+		margin-bottom: 1rem;
+	}
+
+	.advancedToggle {
+		padding: 0.25rem;
+		font-size: 0.75rem;
+	}
+
+	.optionGroup {
+		padding: 0.5rem;
+	}
+
+	.optionLabel {
+		font-size: 0.75rem;
+	}
+
+	.optionSelect,
+	.optionInput {
+		padding: 0.25rem 0.5rem;
+		font-size: 0.75rem;
+	}
+}

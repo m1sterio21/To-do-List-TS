@@ -1,0 +1,147 @@
+.statsContainer {
+	background-color: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.statsGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.statItem {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem;
+	background-color: var(--secondary);
+	border-radius: var(--radius);
+	transition: all 0.2s ease;
+}
+
+.statItem:hover {
+	background-color: var(--accent);
+}
+
+.statIcon {
+	font-size: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.statContent {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.statValue {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.statLabel {
+	font-size: 0.75rem;
+	color: var(--muted-foreground);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.progressContainer {
+	border-top: 1px solid var(--border);
+	padding-top: 1rem;
+}
+
+.progressLabel {
+	font-size: 0.875rem;
+	color: var(--muted-foreground);
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+.progressBar {
+	width: 100%;
+	height: 8px;
+	background-color: var(--secondary);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.progressFill {
+	height: 100%;
+	background: linear-gradient(90deg, var(--primary), var(--primary));
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+	.statsContainer {
+		padding: 1.25rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.statsGrid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.statItem {
+		padding: 0.625rem;
+		gap: 0.625rem;
+	}
+
+	.statIcon {
+		font-size: 1.125rem;
+	}
+
+	.statValue {
+		font-size: 1.375rem;
+	}
+
+	.statLabel {
+		font-size: 0.6875rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.statsContainer {
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.statsGrid {
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.statItem {
+		padding: 0.5rem;
+		gap: 0.5rem;
+	}
+
+	.statIcon {
+		font-size: 1rem;
+	}
+
+	.statValue {
+		font-size: 1.25rem;
+	}
+
+	.statLabel {
+		font-size: 0.625rem;
+	}
+
+	.progressLabel {
+		font-size: 0.8125rem;
+	}
+}
